@@ -154,6 +154,104 @@
  * | Merge Sort     | O(n log n)              | O(n log n)              | O(n log n)              |
  * +----------------+-------------------------+-------------------------+-------------------------+
  *
+
+
+
+
+
+
+
+/*
+ * ==========================================================================================
+ *                PRACTICAL COMPARISON — WHEN TO USE WHICH SORTING ALGORITHM
+ * ==========================================================================================
+ *
+ * BUBBLE SORT
+ *    • When to use: Rarely. Mostly for teaching or extremely tiny datasets.
+ *    • Strengths:
+ *         - Easy to understand
+ *         - Stable
+ *         - Adaptive when optimized (O(n) best case)
+ *    • Weaknesses:
+ *         - Very slow: O(n²)
+ *         - Not used in production
+ *
+ * SELECTION SORT
+ *    • When to use: When minimizing swaps matters (e.g., EEPROM/flash memory writes).
+ *    • Strengths:
+ *         - Always performs exactly n swaps — minimal write operations
+ *         - Simple implementation
+ *         - In-place
+ *    • Weaknesses:
+ *         - Not stable
+ *         - Still O(n²) in all cases
+ *
+ * INSERTION SORT
+ *    • When to use:
+ *         - Arrays that are *nearly sorted*
+ *         - Very small datasets (n < 30)
+ *         - As a base case inside Quick Sort / Merge Sort
+ *    • Strengths:
+ *         - Adaptive: O(n) best case
+ *         - Stable
+ *         - Excellent for small inputs (outperforms quick/merge for tiny n)
+ *    • Weaknesses:
+ *         - O(n²) worst-case
+ *
+ * MERGE SORT
+ *    • When to use:
+ *         - Large datasets
+ *         - Linked lists
+ *         - When stability is required
+ *         - External sorting (data too large to fit in RAM)
+ *    • Strengths:
+ *         - Always O(n log n) — predictable performance
+ *         - Stable
+ *         - Good for parallelization
+ *    • Weaknesses:
+ *         - Requires O(n) extra memory (not in-place)
+ *
+ * QUICK SORT
+ *    • When to use:
+ *         - General-purpose fast sorting
+ *         - Large in-memory arrays
+ *         - When average performance matters more than worst-case guarantee
+ *    • Strengths:
+ *         - Fastest average case: O(n log n)
+ *         - Great cache locality
+ *         - In-place (except recursive stack)
+ *    • Weaknesses:
+ *         - Worst case O(n²) if pivot choices are bad
+ *         - Unstable
+ *         - Sensitive to input order unless pivot is randomized
+ *
+ * HEAP SORT (BONUS — often asked in interviews)
+ *    • When to use:
+ *         - When you need guaranteed O(n log n) *and* O(1) space
+ *         - For embedded systems or memory-constrained environments
+ *    • Strengths:
+ *         - Worst-case O(n log n)
+ *         - In-place
+ *    • Weaknesses:
+ *         - Not stable
+ *         - Worse constant factors than quick sort
+ *
+ * ==========================================================================================
+ *                       WHICH SORT IS “BEST” FOR WHICH SITUATION?
+ * ==========================================================================================
+ *
+ * • Small / nearly sorted arrays ............. INSERTION SORT
+ * • Teaching / educational demos ............. BUBBLE SORT or SELECTION SORT
+ * • Large arrays, general-purpose ............ QUICK SORT (randomized)
+ * • Worst-case performance must be good ...... MERGE SORT or HEAP SORT
+ * • Stability required ....................... MERGE SORT / INSERTION SORT / BUBBLE SORT
+ * • Low memory usage required ................ QUICK SORT / SELECTION SORT / HEAP SORT
+ * • Sorting linked lists ..................... MERGE SORT (no random access needed)
+ * • Minimizing write operations .............. SELECTION SORT
+ *
+ * ==========================================================================================
+ */
+     
  
     
     
