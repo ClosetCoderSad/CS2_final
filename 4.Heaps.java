@@ -232,62 +232,8 @@
  *   - In-place (O(1) extra space) but NOT stable (equal keys can change relative order).
  *
  *
- * 7) DIJKSTRA'S SHORTEST PATH USING A MIN-HEAP PRIORITY QUEUE
- * ------------------------------------------------------------------------------------------
- * Goal:
- *   - Given a weighted graph with non-negative edge weights, find minimum distance
- *     from a source vertex s to all other vertices.
  *
- * Data structures:
- *   - Adjacency list graph representation (Edge: to, weight).
- *   - Min-heap / priority queue storing pairs (vertex, currentDistance).
- *
- * Sketch of Dijkstra using Java's PriorityQueue (min-heap):
- *
- *   static class Edge {
- *       int to, w;
- *       Edge(int t, int w) { this.to = t; this.w = w; }
- *   }
- *
- *   // graph: List<List<Edge>> adj;  V = number of vertices (0..V-1)
- *   public static int[] dijkstra(List<List<Edge>> adj, int src) {
- *       int V = adj.size();
- *       int[] dist = new int[V];
- *       Arrays.fill(dist, Integer.MAX_VALUE);
- *       dist[src] = 0;
- *
- *       // min-heap: smaller distance has higher priority
- *       java.util.PriorityQueue<int[]> pq =
- *           new java.util.PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
- *
- *       pq.offer(new int[]{src, 0});  // {vertex, distance}
- *
- *       while (!pq.isEmpty()) {
- *           int[] cur = pq.poll();
- *           int u = cur[0], d = cur[1];
- *           if (d != dist[u]) continue; // outdated entry
- *
- *           for (Edge e : adj.get(u)) {
- *               int v = e.to;
- *               int nd = d + e.w;
- *               if (nd < dist[v]) {
- *                   dist[v] = nd;
- *                   pq.offer(new int[]{v, nd});
- *               }
- *           }
- *       }
- *       return dist;
- *   }
- *
- * Complexity (Dijkstra with binary heap, adjacency lists):
- *   - V = # of vertices, E = # of edges.
- *   - Each vertex enters PQ at most O(log V) times, each edge relax operation
- *     may push into PQ:
- *        Time:  O((V + E) log V)  ≈  O(E log V) for connected graphs
- *        Space: O(V + E) for graph + O(V) for dist[] + priority queue.
- *
- *
- * 8) SUMMARY OF COMPLEXITIES
+ * 7) SUMMARY OF COMPLEXITIES
  * ------------------------------------------------------------------------------------------
  * HEAP OPERATIONS (binary heap, n elements):
  *   - insert / enqueue          : O(log n) time, O(1) extra space
@@ -303,9 +249,6 @@
  *   - Space: O(1) extra   (in-place)
  *   - Stable: NO
  *
- * DIJKSTRA (binary heap priority queue):
- *   - Time:  O((V + E) log V)
- *   - Space: O(V + E)
- *
  * ==========================================================================================
  */
+
