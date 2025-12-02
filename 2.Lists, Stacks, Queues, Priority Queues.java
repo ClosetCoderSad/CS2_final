@@ -1,4 +1,4 @@
-/*
+*
  * ==========================================================================================
  *   TOPIC 2 NOTES: Implementing Lists, Stacks, Queues, Priority Queues & ADTs (Java)
  * ==========================================================================================
@@ -49,7 +49,7 @@
  *   }
  *
  *
-/* 3) STACKS AND QUEUES (ABSTRACT VIEW)
+* 3) STACKS AND QUEUES (ABSTRACT VIEW)
  * ------------------------------------------------------------------------------------------
  * STACK (LIFO: Last-In First-Out)
  *   push(x)      -> insert at top
@@ -93,7 +93,7 @@
  *       boolean isEmpty() { return top == null; }
  *   }
  *
- /* Complexity:
+ * Complexity:
  *   - push, pop, peek, isEmpty -> O(1) time, O(1) extra space.
  *
  *
@@ -126,7 +126,7 @@
  *       boolean isEmpty() { return front == null; }
  *   }
  *
- /* Complexity:
+ * Complexity:
  *   - enqueue, dequeue, peek, isEmpty -> O(1) time, O(1) extra space.
  *
  *
@@ -195,7 +195,7 @@
  *           }
  *       }
  *   }
- /*
+ *
  * Complexity:
  *   - insert, deleteMin -> O(log n)
  *   - peek (min element) -> O(1)
@@ -234,3 +234,4 @@
  *
  * ==========================================================================================
  */
+
