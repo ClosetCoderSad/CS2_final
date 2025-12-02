@@ -1,6 +1,7 @@
 //TOPIC 1 : SORTING
 
 /*Selection Sort*/
+//Selection sort picks an element and compares it with all elements after it, and if a smaller one is found, it swaps them — repeating this for every position in the list.
     public static void selectionSort(int[] arr) {
         int n = arr.length;
 
@@ -23,6 +24,7 @@
     }
     
 /*Bubble Sort*/
+//Bubble sort repeatedly compares each pair of adjacent elements and swaps them if they’re in the wrong order, slowly “bubbling” the largest elements to the end with each pass.
     public static void bubbleSort(int[] arr) {
         int n = arr.length;
 
@@ -39,6 +41,7 @@
     }
     
 /*Insertion Sort*/
+//Insertion sort takes each element and inserts it into its correct position among the already-sorted elements to its left, shifting items as needed.
     public static void insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int key = arr[i];
@@ -57,6 +60,7 @@
  
  
  /*Merge Sort*/
+//Merge sort splits the list into halves, recursively sorts each half, and then merges the sorted pieces back together.
      public static void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
@@ -112,6 +116,7 @@
     }
     
 /*Quick Sort*/
+//Quick sort picks a pivot, partitions the list into elements smaller and larger than the pivot, and then recursively sorts those partitions.
     public static void quickSort(int arr[], int low, int high) {
         if (low < high) {
             int pivotIndex = partition(arr, low, high);
