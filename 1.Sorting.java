@@ -143,6 +143,19 @@
         arr[i] = arr[j];
         arr[j] = temp;
     }
+
+ Using the partition algorithm to partition an array {5, 8, 10, 3, 4, 19, 2} for a quick sort, what is the resulting array after the partition?
+ A. {5, 8, 10, 3, 4, 19, 2}
+ B. {2, 3, 4, 5, 8, 10, 19}
+ C. {2, 3, 4, 5, 10, 19, 8}
+ D. {3, 2, 4, 5, 10, 19, 8}
+ E. {3, 2, 4, 5, 8, 10, 19}
+
+
+Answer is D. Steps - Take pivot as first element
+                   - Move elements smaller than pivot to left and larger than pivot to right
+                   - Traversed while left < right, using two pointers, Left and right. If L encounters element larger than pivot, and R encounters element smaller than pivot, swap them.
+                   - Lastly swap middle element with pivot
     
     
 
