@@ -155,7 +155,7 @@
 Answer is D. Steps - Take pivot as first element
                    - Move elements smaller than pivot to left and larger than pivot to right
                    - Traversed while left < right, using two pointers, Left and right. If L encounters element larger than pivot, and R encounters element smaller than pivot, swap them.
-                   - Lastly swap middle element with pivot
+                   - Lastly swap whatever R is pointing to at at last with pivot.
     
     
 
